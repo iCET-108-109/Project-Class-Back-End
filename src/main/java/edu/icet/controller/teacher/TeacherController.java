@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TeacherController {
     final TeacherService teacherService;
-
     @GetMapping("/Search-By-Id/{id}")
     public Teacher searchById(@PathVariable Integer id){
         return teacherService.searchById(id);
