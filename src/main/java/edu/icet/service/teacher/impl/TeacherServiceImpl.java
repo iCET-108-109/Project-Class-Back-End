@@ -1,22 +1,24 @@
 package edu.icet.service.teacher.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.icet.dto.Teacher;
-import edu.icet.entity.TeacherEntity;
-import edu.icet.repository.teacher.TeacherRepository;
+import edu.icet.repository.teacher.TeacherRepositary;
 import edu.icet.service.teacher.TeacherService;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class TeacherServiceImpl implements TeacherService {
-
-	final ModelMapper mapper;
-	final TeacherRepository repository;
-
-	@Override
+    final TeacherRepositary teacherRepositary;
+    final ObjectMapper objectMapper;
+    @Override
+    public Teacher searchById(Integer id) {
+        return objectMapper.convertValue(teacherRepositary.findById(id), Teacher.class);
+    }
+  	@Override
 	public void saveTeacher(Teacher teacher) {
 		repository.save(mapper.map(teacher, TeacherEntity.class));
 	}
+
 }
