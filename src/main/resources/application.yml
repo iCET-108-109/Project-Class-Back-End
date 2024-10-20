@@ -2,9 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/studentManage
     username: root
-    password:
-
-
+    password: 1234
   jpa:
     hibernate:
       ddl-auto: create
