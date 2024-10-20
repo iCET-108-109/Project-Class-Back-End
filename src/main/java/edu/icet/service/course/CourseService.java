@@ -10,4 +10,6 @@ public interface CourseService {
     List<Course> addAllCourse();
 
     Course searchById(String id);
+
+    Course searchByName(String name);
 }
