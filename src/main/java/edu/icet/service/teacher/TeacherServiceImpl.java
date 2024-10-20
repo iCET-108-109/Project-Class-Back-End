@@ -1,5 +1,6 @@
 package edu.icet.service.teacher;
 
+import edu.icet.dto.Teacher;
 import edu.icet.repository.teacher.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
