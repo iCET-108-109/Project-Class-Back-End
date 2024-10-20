@@ -1,6 +1,6 @@
 package edu.icet.service.course.impl;
 
-import edu.icet.model.Course;
+import edu.icet.dto.Course;
 import edu.icet.entity.CourseEntity;
 import edu.icet.repository.course.CourseRepository;
 import edu.icet.service.course.CourseService;

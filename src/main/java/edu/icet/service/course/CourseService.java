@@ -1,6 +1,6 @@
 package edu.icet.service.course;
 
-import edu.icet.model.Course;
+import edu.icet.dto.Course;
 
 import java.util.List;
 

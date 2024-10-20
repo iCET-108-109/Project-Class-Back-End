@@ -1,6 +1,6 @@
 package edu.icet.controller.course;
 
-import edu.icet.model.Course;
+import edu.icet.dto.Course;
 import edu.icet.service.course.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
