@@ -19,4 +19,9 @@ public class StudentController {
     public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
+      @GetMapping("/get-by-id/{id}")
+    public Student getById(@PathVariable Integer id){
+        return studentService.getById(id);
+
+    }
 }
