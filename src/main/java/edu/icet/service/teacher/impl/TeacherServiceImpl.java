@@ -1,5 +1,4 @@
 package edu.icet.service.teacher.impl;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.icet.dto.Teacher;
 import edu.icet.repository.teacher.TeacherRepositary;
@@ -20,5 +19,15 @@ public class TeacherServiceImpl implements TeacherService {
 	public void saveTeacher(Teacher teacher) {
 		repository.save(mapper.map(teacher, TeacherEntity.class));
 	}
-
+    @Override
+    public TeacherEntity searchTeacherBySubject(String subject) {
+        Iterable<TeacherEntity> all = teacherRepository.findAll();
+        TeacherEntity teacher = null;
+        for(TeacherEntity teacherEntity:all){
+            if (teacherEntity.getSubject().equalsIgnoreCase(subject)){
+                teacher = teacherEntity;
+            }
+        }
+        return teacher;
+    }
 }
