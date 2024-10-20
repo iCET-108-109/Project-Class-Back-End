@@ -1,4 +1,4 @@
-package edu.icet.icet_student_management_system;
+package edu.icet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
