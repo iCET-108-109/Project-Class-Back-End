@@ -22,4 +22,9 @@ public class StudentServiceImpl implements StudentService {
     public Student getById(Integer id) {
         return modelMapper.map(studentRepository.findById(id),Student.class);
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        studentRepository.deleteById(id);
+    }
 }
