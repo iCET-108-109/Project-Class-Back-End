@@ -1,6 +1,7 @@
 package edu.icet.service.teacher;
 
-public interface TeacherService {
+import edu.icet.entity.TeacherEntity;
 
+public interface TeacherService {
     TeacherEntity searchTeacherBySubject(String subject);
 }
