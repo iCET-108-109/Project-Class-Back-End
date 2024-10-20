@@ -26,4 +26,9 @@ public class CourseController {
     public List<Course> viewAllCourse(){
        return service.addAllCourse();
     }
+
+    @GetMapping("/search-by-id{id}")
+    public Course searchById(@PathVariable String id){
+       return service.searchById(id);
+    }
 }

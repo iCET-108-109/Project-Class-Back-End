@@ -8,4 +8,6 @@ public interface CourseService {
     Boolean addCourse(Course course);
 
     List<Course> addAllCourse();
+
+    Course searchById(String id);
 }
