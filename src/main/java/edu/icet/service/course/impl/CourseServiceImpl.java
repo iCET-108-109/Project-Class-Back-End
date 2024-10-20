@@ -40,4 +40,10 @@ public class CourseServiceImpl implements CourseService {
         Optional<CourseEntity> byId = repository.findById(id);
         return mapper.map(byId,Course.class);
     }
+
+    @Override
+    public Course searchByName(String name) {
+        Optional<CourseEntity> byName = repository.findByName(name);
+        return mapper.map(byName,Course.class);
+    }
 }
