@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,5 +35,11 @@ public class CourseServiceImpl implements CourseService {
             return courses;
         }
         return null;
+    }
+
+    @Override
+    public Course searchById(String id) {
+        Optional<CourseEntity> byId = repository.findById(id);
+        return mapper.map(byId,Course.class);
     }
 }
