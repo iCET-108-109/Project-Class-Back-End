@@ -20,6 +20,21 @@ public class StudentServiceImpl implements StudentService {
     }
     @Override
     public Student getById(Integer id) {
-        return mapper.map(studentRepository.findById(id),Student.class);
+        return modelMapper.map(studentRepository.findById(id),Student.class);
+    }
+      @Override
+    public List<Student> getAllStudent() {
+       List<Student> studentList=new ArrayList<>();
+       repository.findAll().forEach(studentEntity -> {
+
+           studentList.add( new ModelMapper().map(studentEntity, Student.class));
+
+       });
+       return studentList;
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        studentRepository.deleteById(id);
     }
 }

@@ -1,7 +1,9 @@
 package edu.icet.service.teacher;
 
-import edu.icet.entity.TeacherEntity;
+import edu.icet.dto.Teacher;
 
 public interface TeacherService {
-    TeacherEntity searchTeacherBySubject(String subject);
+	void saveTeacher(Teacher teacher);
+    Teacher searchById(Integer id);
+  TeacherEntity searchTeacherBySubject(String subject);
 }
