@@ -31,4 +31,11 @@ public class CourseController {
     public Course searchById(@PathVariable String id){
        return service.searchById(id);
     }
+
+    @GetMapping("/search-by-name{name}")
+    public Course searchByName(@PathVariable String name){
+        return service.searchByName(name);
+    }
+
+
 }
