@@ -3,6 +3,7 @@ package edu.icet.controller.student;
 import edu.icet.dto.Student;
 import edu.icet.service.student.StudentService;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +27,15 @@ public class StudentController {
     public void updateStudent(@RequestBody Student student){
         studentService.addStudent(student);
     }
+      @GetMapping("/student/get-all")
+    public List<Student> findAllStudent(){
+        return studentService.getAllStudent();
+    }
 
     @DeleteMapping("delete-by-id/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteById(@PathVariable Integer id) {
         studentService.deleteById(id);
+
     }
 }
