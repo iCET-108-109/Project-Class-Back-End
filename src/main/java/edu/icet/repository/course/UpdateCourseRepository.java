@@ -1,5 +1,10 @@
 package edu.icet.repository.course;
 
-public interface UpdateCourseService {
-    
+import edu.icet.entity.CourseEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UpdateCourseRepository extends JpaRepository<CourseEntity, String> {
+
 }
