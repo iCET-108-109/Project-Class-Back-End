@@ -16,4 +16,9 @@ public class TeacherServiceImpl implements TeacherService {
     public Teacher searchById(Integer id) {
         return objectMapper.convertValue(teacherRepositary.findById(id), Teacher.class);
     }
+  	@Override
+	public void saveTeacher(Teacher teacher) {
+		repository.save(mapper.map(teacher, TeacherEntity.class));
+	}
+
 }
