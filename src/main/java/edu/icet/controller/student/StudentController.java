@@ -3,10 +3,7 @@ package edu.icet.controller.student;
 import edu.icet.dto.Student;
 import edu.icet.service.student.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,5 +20,10 @@ public class StudentController {
     public Student getById(@PathVariable Integer id){
         return studentService.getById(id);
 
+    }
+
+    @PutMapping("/update-student")
+    public void updateStudent(@RequestBody Student student){
+        studentService.addStudent(student);
     }
 }

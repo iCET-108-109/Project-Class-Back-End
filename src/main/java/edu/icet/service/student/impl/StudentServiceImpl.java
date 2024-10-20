@@ -20,6 +20,8 @@ public class StudentServiceImpl implements StudentService {
     }
     @Override
     public Student getById(Integer id) {
-        return mapper.map(studentRepository.findById(id),Student.class);
+
+        return modelMapper.map(studentRepository.findById(id),Student.class);
     }
+
 }
