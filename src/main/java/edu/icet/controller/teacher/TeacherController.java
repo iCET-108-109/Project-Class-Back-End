@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/teacher")
 @RequiredArgsConstructor
 public class TeacherController {
-    final TeacherService teacherService;
+
 }
